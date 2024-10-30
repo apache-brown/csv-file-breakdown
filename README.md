@@ -4,18 +4,21 @@
 
 ## Features
 
-### 1. Data Explorer
-A table view component that displays the complete contents of the CSV file, allowing users to browse through the data in its entirety.
-
-### 2. Meta Columns Breakdown
+### 1. Meta Columns Breakdown And Missing Values Analysis
 Visualize unique values in each meta column with a **pie chart** to understand the distribution of categories and values within key columns.
+Analyze data completeness with a **bar chart** showing the percentage of empty values for each column, providing insights into data quality across all column types.
 
-### 3. Missing Values Analysis
-Analyze data completeness with a **bar chart** showing the percentage of empty or missing values for each column, providing insights into data quality across all column types.
+![insights.png](readme-assets/insights.png)
 
-### 4. Ask ChatGPT
+### 2. Ask ChatGPT
 Interact with ChatGPT using a predefined prompt based on meta column data and other relevant factors to gain AI-generated insights about your data.
 
+![ask-gpt.png](readme-assets/ask-gpt.png)
+
+### 3. Data Explorer
+A table view component that displays the complete contents of the CSV file, allowing users to browse through the data in its entirety.
+
+![explorer.png](readme-assets/explorer.png)
 
 ## Application Components
 
@@ -35,7 +38,7 @@ The "Ask ChatGPT" feature requires you to have [OpenAI developer platform](https
 ### MongoDB:
 
 Installation guide of MongoDB Community for Ubuntu can be found [here](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/). Make sure that 
-you have a MongoDB instance available on port "localhost" on port "27017".
+you have a MongoDB instance available on "localhost" port "27017".
 alternatively you can change db client set up in _**db.py**_ file.
 
 ## Installation:
@@ -80,7 +83,11 @@ yarn
 ```bash
 cd backend
 ```
-2. start uvicorn server:
+2. active virtual environment:
+```bash
+source venv/bin/activate
+```
+3. start uvicorn server:
 ```bash
 uvicorn main:app --reload
 ```
