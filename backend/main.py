@@ -92,7 +92,7 @@ def upload_file(file: UploadFile = File(...)):
 
 @app.get("/files/list")
 def get_files():
-    files_cursor = db_csv_files.find(projection={"file_id": 1, "filename": 1, "columns_config": 1})
+    files_cursor = db_csv_files.find(projection={"file_id": 1, "filename": 1, "rows_count": 1, "columns_config": 1})
 
     file_list = [{**file, "_id": str(file["_id"])} for file in files_cursor]
 

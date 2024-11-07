@@ -7,5 +7,6 @@ interface ColumnsConfig {
 interface CsvFile {
   _id: string
   filename: string,
-  columns_config: ColumnsConfig
+  columns_config: ColumnsConfig,
+  rows_count: number
 }

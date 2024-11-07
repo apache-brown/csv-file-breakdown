@@ -1,6 +1,6 @@
-import { css, html, LitElement, nothing, PropertyValues } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
-import { classMap } from 'lit/directives/class-map.js';
+import {css, html, LitElement, nothing, PropertyValues} from 'lit';
+import {customElement, property, state} from 'lit/decorators.js';
+import {classMap} from 'lit/directives/class-map.js';
 
 import {
   getFileInsights,
@@ -79,7 +79,7 @@ class FileBreakdown extends LitElement {
 
   private _placeHolder: string = 'No file selected';
 
-  @property({ type: String })
+  @property({type: String})
   selectedFile: CsvFile | null = null;
 
   @state()
@@ -243,26 +243,32 @@ class FileBreakdown extends LitElement {
         <div class="breakdown-inner-container">
           <div class="tabs">
             <div
-              class="tab ${classMap({ active: this._activeTab === 'insights' })}"
+              class="tab ${classMap({active: this._activeTab === 'insights'})}"
               @click="${() => this.handleTabChange('insights')}"
             >
               Insights
             </div>
             <div class="breadcrumb-separator">/</div>
             <div
-              class="tab ${classMap({ active: this._activeTab === 'ask-gpt' })}"
+              class="tab ${classMap({active: this._activeTab === 'ask-gpt'})}"
               @click="${() => this.handleTabChange('ask-gpt')}"
             >
               Ask ChatGPT
             </div>
             <div class="breadcrumb-separator">/</div>
             <div
-              class="tab ${classMap({ active: this._activeTab === 'explorer' })}"
+              class="tab ${classMap({active: this._activeTab === 'explorer'})}"
               @click="${() => this.handleTabChange('explorer')}"
             >
               Explorer
             </div>
-            <div class="filename">${this.selectedFile?.filename || this._placeHolder}</div>
+            <div class="filename">
+              ${
+                this.selectedFile?.filename
+                  ? `${this.selectedFile?.filename} (${this.selectedFile?.rows_count} rows)`
+                  : this._placeHolder
+              }
+            </div>
             ${this._loading
               ? html`
                 <div class="spinner">Loading...</div>`
