@@ -119,7 +119,6 @@ class CsvTable extends LitElement {
   }
 
   private getTableRow(row: CsvRow) {
-    const columns = row.columns;
     return html`
       <tr>
         <td title="${row.row_number}">${row.row_number}</td>
