@@ -106,3 +106,9 @@ yarn dev
 ```
 3. open application in browser: http://localhost:5173/
 
+## Csv File Example:
+Due to fact that csv file can contain only the "data" type columns or no relevant data at all,
+the example of the file format expected by the application can be found in "file_examples" directory.
+The [Tripadvisor-Airlines.csv](file_examples/Tripadvisor-Airlines.csv) contains the customer reviews
+of several airlines. The metadata included in separate columns along with the actual review text.
+You can use this file to easily check the app's functionality.
